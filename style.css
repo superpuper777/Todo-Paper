@@ -1,0 +1,375 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0; }
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0; }
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5; }
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none; }
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto; }
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block; }
+
+header .header__title, .form__wrapper .form__title {
+  font-size: 36px;
+  font-weight: 200;
+  color: #a7a5a5; }
+
+header, footer {
+  width: 100%;
+  display: flex;
+  background: #ececf2; }
+
+header .header__logout-btn, .form .form__authorization-btn, .error-message .error-btn, .todolist .todolist__input-btn, .todolist .todolist__filter_date, .todolist .todolist__current-task-block .todolist__add-btn, .todolist .todolist__completed-task-block .todolist__add-btn, .todolist .todolist__filter-block .todolist__add-btn, .footer__input-btn {
+  appearance: none;
+  border: 0;
+  padding: 8px 16px;
+  font-size: 18px;
+  color: #e6e6e6; }
+
+header .header__logout-btn:hover, .form .form__authorization-btn:hover, .error-message .error-btn:hover, .todolist .todolist__input-btn:hover, .todolist .todolist__filter_date:hover, .todolist .todolist__current-task-block .todolist__add-btn:hover, .todolist .todolist__completed-task-block .todolist__add-btn:hover, .todolist .todolist__filter-block .todolist__add-btn:hover, .footer__input-btn:hover, header .header__logout-btn:active, .form .form__authorization-btn:active, .error-message .error-btn:active, .todolist .todolist__input-btn:active, .todolist .todolist__filter_date:active, .todolist .todolist__current-task-block .todolist__add-btn:active, .todolist .todolist__completed-task-block .todolist__add-btn:active, .todolist .todolist__filter-block .todolist__add-btn:active, .footer__input-btn:active, header .header__logout-btn:focus, .form .form__authorization-btn:focus, .error-message .error-btn:focus, .todolist .todolist__input-btn:focus, .todolist .todolist__filter_date:focus, .todolist .todolist__current-task-block .todolist__add-btn:focus, .todolist .todolist__completed-task-block .todolist__add-btn:focus, .todolist .todolist__filter-block .todolist__add-btn:focus, .footer__input-btn:focus {
+  cursor: pointer;
+  opacity: .9; }
+
+.todolist .todolist__current-task-block .todolist__current-task__title, .todolist .todolist__completed-task-block .todolist__current-task__title, .todolist .todolist__filter-block .todolist__current-task__title, .todolist .todolist__completed-task-block .todolist__completed-task__title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  text-align: start;
+  padding-left: 10px; }
+
+.todolist .todolist__item input[type=radio]:checked + label:before {
+  background-image: url(./images/icon-completed_task.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1em; }
+
+.todolist .todolist__filter-block .todolist__input, .todolist .todolist__input, .footer__input {
+  border: none;
+  width: 250px;
+  font-size: 16px;
+  border-radius: 10px; }
+
+.todolist .todolist__item {
+  background: #fffeff;
+  border-radius: 10px;
+  padding: 14px 18px;
+  width: 250px; }
+
+body {
+  font: 100% "Nunito", sans-serif;
+  color: #5a5656;
+  background: #e9e9f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  @media (max-width: 768px) {
+    body {
+      justify-content: flex-start; } }
+
+#main {
+  padding: 120px; }
+
+header {
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 50px; }
+  @media (max-width: 768px) {
+    header {
+      margin-bottom: 0; } }
+  header .header__logo-picture {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url(./images/svg/logo.svg);
+    margin-right: 1rem; }
+  header .header__group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px; }
+  header .header__logout-btn {
+    border-radius: 20px;
+    background: #fbad2f; }
+
+.form__wrapper {
+  position: relative; }
+  .form__wrapper .form__title {
+    position: absolute;
+    left: calc(100%/2 - 40px);
+    top: -80px; }
+  .form__wrapper .form__logo {
+    position: absolute;
+    left: calc(100%/2 - 20px);
+    top: -15px;
+    width: 2.5rem;
+    height: 2.5rem;
+    z-index: 99; }
+
+.form {
+  max-width: calc(100%/4.5);
+  height: calc(100vh/1.8);
+  font-size: 18px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  background: #fff;
+  border-radius: 20px 20px 200px 200px;
+  padding-bottom: 60px;
+  padding-top: 40px;
+  box-shadow: 7px 7px 32px 0px rgba(0, 0, 0, 0.09);
+  z-index: -1; }
+  @media screen and (max-width: 1080px) {
+    .form {
+      max-width: 250px; } }
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .form {
+      height: calc(100vh/2.4); } }
+  @media screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+    .form {
+      height: calc(100vh/3); } }
+  @media screen and (min-device-width: 320px) and (max-device-width: 568px) {
+    .form {
+      width: calc(100%/1.6); } }
+  @media screen and (min-device-width: 320px) and (max-device-width: 568px) {
+    .form {
+      font-size: 14px; } }
+  .form .form__registration-link {
+    color: #9d80bc;
+    text-decoration: underline;
+    cursor: pointer; }
+  .form .form__registration-link:active, .form .form__registration-link:hover, .form .form__registration-link:focus {
+    color: #6919be; }
+  .form .input-text {
+    margin: 0 20px; }
+  .form .form__input {
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    padding: 10px;
+    background-color: #e9e9f0;
+    border-radius: 10px; }
+    @media screen and (min-device-width: 320px) and (max-device-width: 568px) {
+      .form .form__input {
+        font-size: 14px; } }
+  .form .form__input:focus {
+    color: #5a5656; }
+  .form .form__authorization-btn {
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+    background: #a35fd0; }
+    @media screen and (min-device-width: 320px) and (max-device-width: 568px) {
+      .form .form__authorization-btn {
+        font-size: 14px; } }
+
+.error-message {
+  max-width: calc(100%/2);
+  max-height: calc(100vh/1.5);
+  font-size: 18px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 3em;
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; }
+  .error-message .error-message__text {
+    overflow-y: scroll; }
+  .error-message .error-message__title-text {
+    color: black;
+    font-weight: bold; }
+  .error-message .error-btn {
+    border-radius: 20px;
+    background: #a35fd0; }
+
+.todolist {
+  max-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start; }
+  @media (max-width: 768px) {
+    .todolist {
+      max-height: 100vh; } }
+  .todolist .todolist__filter-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 26px; }
+    .todolist .todolist__filter-block .todolist__input {
+      padding: 10px 18px; }
+    .todolist .todolist__filter-block .todolist__filter {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center; }
+      @media (max-width: 768px) {
+        .todolist .todolist__filter-block .todolist__filter {
+          display: none; } }
+      .todolist .todolist__filter-block .todolist__filter .todolist__text_filter {
+        font-weight: bold;
+        color: #000; }
+  @media (max-width: 768px) {
+    .todolist .todolist__current-task-input {
+      display: none; } }
+  .todolist .todolist__input {
+    padding: 14px 18px; }
+  .todolist .todolist__input:focus {
+    color: #5a5656; }
+  .todolist .todolist__search-input {
+    position: relative; }
+    @media (max-width: 768px) {
+      .todolist .todolist__search-input {
+        margin-bottom: 30px; } }
+  .todolist .todolist__input-btn {
+    padding: 10px 18px;
+    font-size: 16px;
+    background: #a35fd0;
+    border-radius: 0  10px  10px 0;
+    position: absolute;
+    right: .1rem; }
+  .todolist .todolist__filter_date {
+    font-size: 16px;
+    width: 200px;
+    background: #fffeff;
+    border-radius: 10px;
+    color: #5a5656;
+    background-image: url(./images/svg/todolist_search_icon_calendar.svg);
+    background-repeat: no-repeat;
+    background-position: 95%; }
+  .todolist .todolist__current-task-block .todolist__tasks-content, .todolist .todolist__completed-task-block .todolist__tasks-content, .todolist .todolist__filter-block .todolist__tasks-content {
+    display: flex;
+    height: 26em;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px; }
+    @media (max-width: 768px) {
+      .todolist .todolist__current-task-block .todolist__tasks-content, .todolist .todolist__completed-task-block .todolist__tasks-content, .todolist .todolist__filter-block .todolist__tasks-content {
+        justify-content: flex-start;
+        gap: 30px;
+        height: inherit; } }
+  .todolist .todolist__current-task-block .todolist__completed-task__title, .todolist .todolist__completed-task-block .todolist__completed-task__title, .todolist .todolist__filter-block .todolist__completed-task__title {
+    margin-top: 30px; }
+  .todolist .todolist__current-task-block .todolist__current-task-input, .todolist .todolist__completed-task-block .todolist__current-task-input, .todolist .todolist__filter-block .todolist__current-task-input {
+    position: relative; }
+  .todolist .todolist__current-task-block .todolist__add-btn, .todolist .todolist__completed-task-block .todolist__add-btn, .todolist .todolist__filter-block .todolist__add-btn {
+    position: absolute;
+    right: -25px;
+    top: -20px;
+    width: 4.5em;
+    height: 4.5em;
+    border-radius: 50%;
+    background: #64bd7a;
+    background-image: url(./images/todolist_icon__add.png);
+    background-repeat: no-repeat;
+    background-position: 50%; }
+  .todolist .todolist__item .todolist__item_radio {
+    display: none; }
+  .todolist .todolist__item label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 0;
+    line-height: 18px;
+    user-select: none; }
+  .todolist .todolist__item label:before {
+    content: "";
+    display: inline-block;
+    text-align: center;
+    width: 1.4em;
+    height: 1.4em;
+    background: #e9e9f0;
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+    bottom: -1px; }
+  .todolist .todolist__completed-task-block .completed__icon {
+    width: 1rem;
+    height: 1rem; }
+  .todolist .todolist__completed-task-block .todolist__item {
+    display: flex;
+    gap: 5px;
+    align-items: center; }
+
+footer {
+  justify-content: center;
+  gap: 40px; }
+  @media (max-width: 768px) {
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      margin-bottom: 10px; } }
+
+.footer__adding-input {
+  position: relative; }
+  @media (max-width: 768px) {
+    .footer__adding-input {
+      margin-top: 20px; } }
+
+.footer__input {
+  padding: 14px 18px; }
+
+.footer__input:focus {
+  color: #5a5656; }
+
+.footer__input-btn {
+  padding: 23px 23px;
+  font-size: 16px;
+  border-radius: 0  10px  10px 0;
+  position: absolute;
+  right: .1rem;
+  background: #64bd7a;
+  background-image: url(./images/todolist_icon__add.png);
+  background-repeat: no-repeat;
+  background-position: 50%; }
+
+/*# sourceMappingURL=style.css.map */
