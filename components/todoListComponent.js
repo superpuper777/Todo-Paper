@@ -1,13 +1,12 @@
 export default function todoModule() {
   class TodoListComponent {
     constructor(anchor, data) {
-
+      this.data = data;
+      console.log(this.data[0].text)
       if (anchor) {
         this.anchor = anchor;
         this.anchor.innerHTML = this.render();
       }
-      this.data = data;
-      console.log(this.data[0].text)
     }
     render() {
       return `
@@ -44,7 +43,7 @@ export default function todoModule() {
                 class="todolist__item_radio"
               />
               ${this.data ? `
-              <label for="completedTask" class="task_name">${this.data[0].text}</label>
+              <label for="completedTask" class="task_name">${this.data[1].text}</label>
               ` : `
               <label for="completedTask" class="task_name">!@$@%#^$</label>
               `
