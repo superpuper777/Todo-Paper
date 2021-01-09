@@ -345,7 +345,7 @@ header {
     .todolist__add-btn{
       @extend %button;
       position: absolute;
-      right: -25px;
+      right: 75px;
       top: -20px;
       width: 4.5em;
       height: 4.5em;
@@ -357,7 +357,12 @@ header {
     }
 
 }
-
+.todolist__item_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 .todolist__item{
   @extend %todolist_item;
 

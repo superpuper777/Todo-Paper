@@ -13,7 +13,6 @@ window.onload = function () {
     logIn();
   }
 
-
   document.querySelector('.form__registration-link').addEventListener('click', () => {
     const registrMod = registrationModule();
     const registrationComponent = new registrMod.RegistrationComponent(renderedComponent);
@@ -92,12 +91,6 @@ function logIn() {
         logIn();
       })
     }
-
-    // localStorage.setItem("login", login);
-    // localStorage.setItem("password", password);
-
-    // console.log(localStorage);
-
   })
 }
 
@@ -110,6 +103,22 @@ async function todoList() {
   const todoListComponent = new todoListMod.TodoListComponent(renderedComponent, todos);
   changePageContent(renderedComponent.innerHTML);
   logOut();
+  createTodo();
+}
+
+function createTodo() {
+  const todoMod = todoService();
+  const todoSrv = new todoMod.TodoSrv();
+  document.querySelector('.todolist__add-btn').addEventListener('click', () => {
+    let newText = document.querySelector('.createTodo').value;
+    let newItem = {
+      id: Math.floor(Math.random() * 101),
+      text: newText,
+      isActive: true
+    }
+    todoSrv.addTodo(newItem);
+    todoList();
+  })
 }
 
 function logOut() {
@@ -136,16 +145,3 @@ function validateFields() {
     }
   }
 }
-
-// const​ toDoData​ = [{
-//   ​
-//   id​: ​1​,
-//   ​text​: ​ 'Сделать тестовое задание'​,
-//   ​isActive​: ​true
-// }];
-
-// function​ getData​(filters) {
-//   ​ // logic with filters
-//   ​
-//   return new​ Promise​.​resolve​(​toDoData​);
-// }

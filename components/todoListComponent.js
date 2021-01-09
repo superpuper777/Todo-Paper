@@ -1,12 +1,18 @@
 export default function todoModule() {
   class TodoListComponent {
     constructor(anchor, data) {
+      this.options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
       this.data = data;
       console.log(this.data[0].text)
       if (anchor) {
         this.anchor = anchor;
         this.anchor.innerHTML = this.render();
       }
+
     }
     render() {
       return `
@@ -35,24 +41,27 @@ export default function todoModule() {
         <div class="todolist__current-task__title">Мои задачи</div>
         <div class="todolist__tasks-content">
           <div class="todolist__items">
-            <div class="todolist__item">
+          <div class="todolist__item_wrapper">
+          <div class="todolist__item">
               <input
                 type="radio"
                 name="task_completed"
                 id="completedTask"
                 class="todolist__item_radio"
               />
-              ${this.data ? `
-              <label for="completedTask" class="task_name">${this.data[1].text}</label>
-              ` : `
-              <label for="completedTask" class="task_name">!@$@%#^$</label>
-              `
+              ${this.data.map((item) => `
+              <label for="completedTask" class="task_name">${item.text}</label>
+              `).join('')  
               }
             </div>
+
+            <span>${new Date().toLocaleDateString('ru-RU', this.options)}</span>
+          </div>
+            
           </div>
 
           <div class="todolist__current-task-input">
-            <input type="text" class="todolist__input" />
+            <input type="text" class="todolist__input createTodo" />
             <div class="todolist__add-btn"></div>
           </div>
         </div>
