@@ -74,6 +74,10 @@ body{
   }
 }
 
+input:required:valid {
+  border-color: green;
+}
+
 #main {
   padding: 120px;
 }
@@ -329,9 +333,7 @@ header {
       }
   }
 
-  .todolist__completed-task__title {
-    margin-top: 30px;
-  }
+ 
     
     .todolist__current-task__title {
       @extend %task-title;

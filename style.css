@@ -106,6 +106,9 @@ body {
     body {
       justify-content: flex-start; } }
 
+input:required:valid {
+  border-color: green; }
+
 #main {
   padding: 120px; }
 
@@ -294,8 +297,6 @@ header {
         justify-content: flex-start;
         gap: 30px;
         height: inherit; } }
-  .todolist .todolist__current-task-block .todolist__completed-task__title, .todolist .todolist__completed-task-block .todolist__completed-task__title, .todolist .todolist__filter-block .todolist__completed-task__title {
-    margin-top: 30px; }
   .todolist .todolist__current-task-block .todolist__current-task-input, .todolist .todolist__completed-task-block .todolist__current-task-input, .todolist .todolist__filter-block .todolist__current-task-input {
     position: relative; }
   .todolist .todolist__current-task-block .todolist__add-btn, .todolist .todolist__completed-task-block .todolist__add-btn, .todolist .todolist__filter-block .todolist__add-btn {

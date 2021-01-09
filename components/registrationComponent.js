@@ -21,21 +21,21 @@ export default function registrationModule() {
         <div class="input-text">
           <input
             type="text"
-            class="form__input user-name"
+            class="form__input user-name field"
             placeholder="Введите имя"
           />
         </div>
         <div class="input-text">
           <input
             type="password"
-            class="form__input user-password"
+            class="form__input user-password field"
             placeholder="Введите пароль"
           />
         </div>
         <div class="input-text">
           <input
             type="password"
-            class="form__input user-password"
+            class="form__input user-password field"
             placeholder="Подтвердите пароль"
           />
         </div>

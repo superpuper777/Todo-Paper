@@ -7,6 +7,7 @@ export default function loginModule() {
       }
       document.querySelector('header').style.display = "none";
       document.querySelector('footer').style.display = "none";
+
     }
 
     render() {
@@ -21,14 +22,14 @@ export default function loginModule() {
         <div class="input-text">
           <input
             type="text"
-            class="form__input user-name"
+            class="form__input user-name field"
             placeholder="Имя пользователя"
           />
         </div>
         <div class="input-text">
           <input
             type="password"
-            class="form__input user-password"
+            class="form__input user-password field"
             placeholder="Пароль"
           />
         </div>
